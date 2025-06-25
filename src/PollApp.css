@@ -1,0 +1,205 @@
+/** Modern Poll Vote App Styles **/
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Roboto', Arial, sans-serif;
+  background: linear-gradient(135deg, #f5d0fe 0%, #c7d2fe 100%);
+}
+
+#root {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.poll-container {
+  width: 100%;
+  max-width: 700px;
+  min-height: 340px;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.13);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 22px 32px 18px 32px;
+  position: relative;
+}
+
+.poll-section {
+  width: 100%;
+  margin-bottom: 28px;
+  padding-bottom: 18px;
+  border-bottom: 1.5px solid #e5e7eb;
+}
+.poll-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.poll-question {
+  font-size: 1.45rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  color: #1e293b;
+  letter-spacing: 0.01em;
+}
+
+.poll-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 0;
+}
+
+.poll-button {
+  padding: 16px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #2563eb 60%, #38bdf8 100%);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.12s, background 0.2s;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+}
+.poll-button:hover:not(:disabled) {
+  background: linear-gradient(90deg, #1d4ed8 60%, #0ea5e9 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+}
+.poll-button:disabled {
+  background: #cbd5e1;
+  color: #64748b;
+  cursor: not-allowed;
+}
+
+.poll-results-title {
+  margin-top: 0;
+  font-size: 1.18rem;
+  color: #334155;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-bottom: 18px;
+}
+
+.poll-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 12px 0 10px 0;
+  padding: 0 6px;
+  font-size: 1.04rem;
+}
+
+.poll-option-name {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.poll-bar {
+  flex: 1;
+  height: 16px;
+  margin: 0 10px;
+  background: #e0e7ff;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+.poll-bar-inner {
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #38bdf8 0%, #2563eb 100%);
+  transition: width 0.4s;
+}
+
+.poll-winner-loser {
+  margin-top: 18px;
+  text-align: left;
+  width: 100%;
+}
+.poll-winner-loser p {
+  margin: 8px 0 4px 0;
+  font-weight: 700;
+}
+.poll-winner {
+  color: #16a34a;
+  font-weight: 800;
+}
+.poll-loser {
+  color: #dc2626;
+  font-weight: 800;
+}
+.poll-thanks {
+  margin-top: 22px;
+  color: #0ea5e9;
+  font-weight: bold;
+  font-size: 1.08rem;
+}
+.poll-refresh-btn {
+  margin-top: 16px;
+  padding: 10px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #f472b6 0%, #818cf8 100%);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(129,140,248,0.10);
+  transition: background 0.18s, transform 0.12s;
+}
+.poll-refresh-btn:hover {
+  background: linear-gradient(90deg, #ec4899 0%, #6366f1 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.poll-button-selected {
+  outline: 3px solid #818cf8;
+  background: linear-gradient(90deg, #818cf8 60%, #f472b6 100%) !important;
+  color: #fff;
+}
+
+.poll-submit-btn {
+  margin-top: 18px;
+  padding: 12px 36px;
+  font-size: 1.08rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #818cf8 0%, #f472b6 100%);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(129,140,248,0.10);
+  transition: background 0.18s, transform 0.12s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.poll-submit-btn:disabled {
+  background: #cbd5e1;
+  color: #64748b;
+  cursor: not-allowed;
+}
+.poll-submit-btn:hover:not(:disabled) {
+  background: linear-gradient(90deg, #6366f1 0%, #ec4899 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+
+@media (max-width: 600px) {
+  .poll-container {
+    padding: 12px 2vw 12px 2vw;
+    max-width: 99vw;
+    min-height: 98vw;
+  }
+  .poll-buttons {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+} 
